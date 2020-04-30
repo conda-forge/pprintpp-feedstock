@@ -17,7 +17,7 @@ build:
     - pypprint = pprintpp:console
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
