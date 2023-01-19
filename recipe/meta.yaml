@@ -8,8 +8,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ea826108e2c7f49dc6d66c752973c3fc9749142a798d6b254e1e301cfdbc6403
+  patches:
+    - 0001-setup.py-Do-not-use-deprecated-U-mode.patch
 
 build:
+  noarch: python
   number: 5
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -18,10 +21,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
